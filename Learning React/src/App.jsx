@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const App = () => {
 
@@ -10,11 +10,6 @@ const App = () => {
     setData(res.data);
     console.log(data);
   };
-
-  useEffect(() => {
-    getData()
-  }, [])
-  
 
   return (
     <div className="w-full min-h-screen bg-zinc-900 p-10">
