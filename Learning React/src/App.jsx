@@ -1,23 +1,24 @@
 import { useState } from "react";
 
-const App = () => {
+function App() {
 
-  // let a = 'Arpan';
+ const [username, setUsername] = useState('')
 
-  const [num , setNum] = useState(0)
-
-  const changeA = () =>{
-    setNum(num + 1)
-  }
-  const changeM = () =>{
-    setNum(num - 1)
-  }
+ const submitHandler = (e) =>{
+  e.preventDefault()
+  console.log(username);
+  setUsername('')
+ }
 
   return (
-    <div className="w-full h-screen bg-zinc-900 p-10">
-      <h1 className="text-3xl">Number is : {num}</h1>
-      <button className="bg-blue-400 px-5 py-2 rounded-md mt-5 mr-2" onClick={changeA}>Increment</button>
-      <button className="bg-blue-400 px-5 py-2 rounded-md mt-5 " onClick={changeM}>Decrement</button>
+    <div className="w-full h-screen bg-zinc-900 flex justify-center items-center">
+      <form className=" flex justify-center items-center flex-col "onSubmit={(e) => {submitHandler(e)}} >
+        <input
+        value={username} 
+        onChange={(e) => {setUsername(e.target.value)}}
+        type="text" placeholder="Name" className="py-3 px-5 rounded-lg m-2 text-xl outline-none"/>
+        <button  className="py-3 px-12 rounded-lg m-2 bg-blue-400 text-semibold text-xl">Submit</button>
+      </form>
     </div>
   )
 }
