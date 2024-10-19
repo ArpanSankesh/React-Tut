@@ -1,10 +1,18 @@
+import { createContext } from "react"
 
-export const UserContext = () => {
-    const username = 'Max'
-    
+export const DataContext = createContext();
+
+
+export const UserContext = ({children}) => {
+
+    const username = 'max'
+
   return (
     <div>
-        <h1>{username}</h1>
+        <DataContext.Provider value={username}>
+        {children}
+        </DataContext.Provider>
+
     </div>
   )
 }
