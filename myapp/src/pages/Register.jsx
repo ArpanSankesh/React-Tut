@@ -15,10 +15,11 @@ const Register = () => {
 
   const [email, setemail] = useState("");
   const [pass, setPass] = useState("");
-  const [count, setCount] = useState("");
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setCount(0);
+    console.log(`Count : ${count}`);
+    
   }, [count]);
 
   return (
