@@ -19,7 +19,7 @@ const Register = () => {
 
   useEffect(() => {
     setCount(0);
-  }, []);
+  }, [count]);
 
   return (
     <>
