@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Register = () => {
 
   function handelRegister(e) {
@@ -5,17 +7,17 @@ const Register = () => {
     console.log("hello");
   }
 
-  let age = 18;
-
+  const [email, setemail] = useState('');
+  console.log(email);
+  
   return (
     <>
       <form action="#">
-        {age >= 18 ? (
         <div>
-          <input type="text" name="" id="" placeholder="Email" />
+          <input type="text" name="email"  placeholder="Email" value={email} onChange={(e) => setemail(e.target.value)} />
+          <input type="password" name="pass"  placeholder="password" />
           <button onClick={handelRegister}>Submit</button>
         </div>
-        ): <h1>You are a Kid, Grow up!</h1>}
       </form>
     </>
   );
