@@ -1,7 +1,7 @@
 
-const Title = () => {
+const Title = (props) => {
   return (
-    <h1></h1>
+    <h1>{props.name}</h1>
   )
 }
 
