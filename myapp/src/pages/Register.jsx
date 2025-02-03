@@ -19,7 +19,6 @@ const Register = () => {
 
   useEffect(() => {
     console.log(`Count : ${count}`);
-    
   }, [count]);
 
   return (
