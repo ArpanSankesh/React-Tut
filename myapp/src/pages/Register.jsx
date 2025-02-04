@@ -1,10 +1,19 @@
 // /* eslint-disable react-hooks/rules-of-hooks */
 // import { useEffect } from "react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
+const expensiveCalculation = (num) => {
+  console.log('calcullating...');
+  for(let i = 0; i< 100000000; i++){
+    num += 1;
+  }
+  return num;
+  
+}
 const Register = () => {
   const [count, setCount] = useState(0);
   const [todos, setTodos] = useState([]);
+  const calculation = useMemo(expensiveCalculation()) ;
 
   const increment = () => {
     setCount((c) => c + 1);
@@ -21,6 +30,7 @@ const Register = () => {
         {todos.map((todos, index) => {
           return <p key={index}>{todos}</p>
         })}
+        <button onClick={addTodo}> Add Todo</button>
       </div>
       <hr />
       <div>
