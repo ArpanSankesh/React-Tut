@@ -1,12 +1,9 @@
-import { configureStore } from "@reduxjs/toolkit";
+
 import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Register from './pages/Register';
-
-const store = configureStore({
-  reducer: rootReducer,
-});
+import store from './store/store';
 
 const router = createBrowserRouter([
   {
