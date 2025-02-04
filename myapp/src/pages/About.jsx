@@ -6,8 +6,7 @@ function About() {
     return (
         <>
         <Title name="Node JS Guides" />
-        <Title name="General" />
-        <Title name="Node JS Core Concepts" />
+        
         </>
     )
 }
