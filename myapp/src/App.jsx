@@ -1,6 +1,12 @@
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from 'react-redux'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
 import Register from './pages/Register';
+
+const store = configureStore({
+  reducer: rootReducer,
+});
 
 const router = createBrowserRouter([
   {
@@ -9,7 +15,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/register',
-    element: <Register/>
+    element: <Register />
   },
   {
     path: '/projects',
@@ -20,7 +26,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
-    <RouterProvider router={router} />
+      <Provider store={store} >
+        <RouterProvider router={router} />
+      </Provider>
     </>
   )
 }
