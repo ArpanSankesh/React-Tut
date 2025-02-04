@@ -1,6 +1,7 @@
 // /* eslint-disable react-hooks/rules-of-hooks */
 // import { useEffect } from "react";
 import { useMemo, useState } from "react";
+import { Links } from "react-router-dom"
 
 const expensiveCalculation = (num) => {
   console.log('calcullating...');
@@ -39,7 +40,12 @@ const Register = () => {
         <h2>Expensive Calculation</h2>
         {calculation}
       </div>
+      <br />
+      <br />
+      <br />
+      <Links to="/projects" />
     </div>
+
   )
 };
 
