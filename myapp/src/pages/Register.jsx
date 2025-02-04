@@ -1,10 +1,18 @@
 // /* eslint-disable react-hooks/rules-of-hooks */
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { useState } from "react";
 
 const Register = () => {
-  const [count, setCount] = useState(0)
-  const [todos, setTodos] = useState([second])
+  const [count, setCount] = useState(0);
+  const [todos, setTodos] = useState([]);
+
+  const increment = () => {
+    setCount((c) => c + 1);
+  }
+
+  const addTodo = () => {
+    setTodos((t) => [...t, "New Todo"])
+  } 
 
   return (
     <div>
